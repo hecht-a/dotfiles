@@ -1,0 +1,8 @@
+{
+  "app.beta": true,
+  "autocomplete.keybindings.insertCommonPrefix": "tab",
+  "autocomplete.keybindings.insertCommonPrefixOrNavigateDown": "tab",
+  "autocomplete.keybindings.insertSelected": "tab",
+  "autocomplete.theme": "nord",
+  "integrations.hyper.disabled": true
+}
