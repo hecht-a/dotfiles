@@ -74,7 +74,7 @@ ZSH_THEME="axel"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf zsh-interactive-cd zsh-navigation-tools fig symfony themes git)
+plugins=(fzf zsh-interactive-cd zsh-navigation-tools fig symfony themes git jsontools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,6 +103,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+documents="~/Documents"
+alias edi="cd ${documents}/edi-app"
+alias heisenberg="cd ${documents}/heisenberg"
+alias dotfiles="cd ${documents}/dotfiles"
+alias browser="cd ~/meta-browser && pnpm run start"
+alias sc="source ~/.zshrc"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
