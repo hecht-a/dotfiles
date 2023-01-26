@@ -4,6 +4,7 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
     fzf
+    zsh-autosuggestions
     zsh-interactive-cd
     zsh-navigation-tools
     symfony
