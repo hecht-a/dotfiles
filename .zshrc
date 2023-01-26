@@ -3,7 +3,6 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 plugins=(
-    fzf
     zsh-autosuggestions
     zsh-interactive-cd
     zsh-navigation-tools
@@ -31,16 +30,19 @@ alias preprod="ssh adminweb@dev-01-webisy.cer02.intra"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-
 ## CARGO
-export PATH="$PATH/.cargo/bin"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # PNPM
 PNPM_HOME="/usr/local/bin/pnpm"
 export PNPM_HOME="/home/ahecht/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
+# FZF
+export PATH="$HOME/.fzf/bin:$PATH"
+
 eval "$(starship init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
