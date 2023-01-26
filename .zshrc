@@ -54,4 +54,13 @@ eval "$(starship init zsh)"
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
+# KEY BINDING
+bindkey '^H' backward-kill-word # Ctrl+Backspace: kill the word backward
+
+bindkey '^[[3;5~' kill-word # Ctrl+Delete: kill the word forward
+
+bindkey "^[[1;3C" forward-word # Alt+Right: Move after word at right
+
+bindkey "^[[1;3D" backward-word # Alt+Left: Move after word at left
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
