@@ -52,7 +52,7 @@ export PATH="$PATH:/home/ahecht/.local/share/JetBrains/Toolbox/scripts"
 
 eval "$(starship init zsh)"
 
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_DEFAULT_OPTS='--height 80% --reverse --border=rounded --info=inline'
 
 # KEY BINDING
 bindkey '^H' backward-kill-word # Ctrl+Backspace: kill the word backward
