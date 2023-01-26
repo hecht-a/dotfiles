@@ -1,0 +1,8 @@
+[user]
+	name = hecht-a
+	email = axel.hct@gmail.com
+[core]
+	editor = gedit
+	autocrlf = input
+	fileMode = false
+	excludesFile = ~/.gitignore
