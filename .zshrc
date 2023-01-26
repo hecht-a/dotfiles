@@ -7,6 +7,7 @@ plugins=(
     zsh-autosuggestions
     zsh-interactive-cd
     zsh-navigation-tools
+    zsh-syntax-highlighting
     symfony
     themes
     git
