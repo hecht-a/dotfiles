@@ -2,6 +2,8 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
+export PATH="/home/ahecht/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+
 plugins=(
     zsh-autosuggestions
     zsh-interactive-cd
@@ -15,6 +17,7 @@ plugins=(
     )
 
 source $ZSH/oh-my-zsh.sh
+
 
 ## ALIASES
 documents="~/Documents"
@@ -40,6 +43,12 @@ export PATH="$PNPM_HOME:$PATH"
 
 # FZF
 export PATH="$HOME/.fzf/bin:$PATH"
+
+# MSSQL
+export PATH="$PATH:/opt/mssql-tools/bin"
+
+# JETBRAINS TOOLBOX
+export PATH="$PATH:/home/ahecht/.local/share/JetBrains/Toolbox/scripts"
 
 eval "$(starship init zsh)"
 
