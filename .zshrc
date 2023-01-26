@@ -12,6 +12,7 @@ plugins=(
     themes
     git
     jsontools
+    history
     )
 
 source $ZSH/oh-my-zsh.sh
