@@ -1,5 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
+source ~/.ssh.zsh
+
 ZSH_THEME="robbyrussell"
 
 export PATH="/home/ahecht/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
@@ -27,9 +29,6 @@ alias dotfiles="cd ${documents}/dotfiles"
 alias browser="cd ~/meta-browser && pnpm run start"
 alias sc="source ~/.zshrc"
 alias maj="sudo sh ~/maj.sh"
-
-alias preprod-batch="ssh adminweb@C-BATCH.cer02.intra"
-alias preprod="ssh adminweb@dev-01-webisy.cer02.intra"
 
 ## DOTFILES REPO
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
