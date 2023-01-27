@@ -31,7 +31,14 @@ alias maj="sudo sh ~/maj.sh"
 alias preprod-batch="ssh adminweb@C-BATCH.cer02.intra"
 alias preprod="ssh adminweb@dev-01-webisy.cer02.intra"
 
+## DOTFILES REPO
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias dfs='dotfiles status'
+alias dfl='dotfiles log'
+alias dfd='dotfiles diff'
+alias dfc='dotfiles commit'
+alias dfp='dotfiles push'
 
 ## CARGO
 export PATH="$HOME/.cargo/bin:$PATH"
