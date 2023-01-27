@@ -1,0 +1,29 @@
+# Monterey / BigSur config
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# Activate the automatic snapping
+yabai -m config layout bsp
+
+# yabai -m config window_opacity no
+# yabai -m config active_window_opacity 1.0
+# yabai -m config normal_window_opacity 0.9
+
+# Spacing around windows
+yabai -m config top_padding 20
+yabai -m config bottom_padding 68
+yabai -m config left_padding 20
+yabai -m config right_padding 20
+yabai -m config window_gap 20
+
+# Border color
+yabai -m config window_border on
+yabai -m config normal_window_border_color 0x00FFBF00
+yabai -m config active_window_border_color 0xFFFFBF00
+yabai -m config window_shadow off
+yabai -m config window_border_blur off
+
+# Ignore programs
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="^Logi Options$" manage=off

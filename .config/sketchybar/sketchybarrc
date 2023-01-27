@@ -1,0 +1,82 @@
+source $HOME/.config/sketchybar/vars.sh
+
+# How the bar shows up
+sketchybar --bar position=bottom\
+                 sticky=true\
+                 height=$HEIGHT\
+		 color=0xF21e1e2e\
+		 display=all\
+		 sticky=on
+
+# What are items's default values
+sketchybar --default updates=when_shown\
+                     drawing=on\
+                     icon.font="Hack Nerd Font:Bold:22.0"\
+                     icon.color=$LIGHT_COLOR\
+                     label.font="Hack Nerd Font:Bold:18.0"\
+                     label.color=$LIGHT_COLOR\
+                     label.padding_left=4\
+                     label.padding_right=4\
+                     icon.padding_left=4\
+                     icon.padding_right=4\
+		     background.corner_radius=$RADIUS\
+		     background.height=$BACKGROUND_ITEM_HEIGHT\
+		     background.padding_right=4\
+		     background.padding_left=4
+
+sketchybar --add item clock right\
+	   --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh"
+
+sketchybar --add item battery right\
+	   --set battery update_freq=10 script="$PLUGIN_DIR/battery.sh"
+
+sketchybar --add item space_name_1 left\
+		 drawing=on
+
+sketchybar --add item space_name_2 left\
+		 drawing=on
+# Spaces setup
+DISPLAY_1_SPACES=('Code' 'Web' 'Utils' 'Misc')
+DISPLAY_1_ICONS=('' '' '' '')
+DISPLAY_2_SPACES=('Stream' 'Communications' 'Music' 'Tools')
+DISPLAY_2_ICONS=('' 'ﮠ' '' '')
+
+COUNT=1
+
+function setup_display_spaces() {
+	# First arg is a display index
+	# Second arg is an array of space
+	# Third arg is an array of icons
+
+	local DISPLAY=$1
+	local COUNT=$(( 4 * $((DISPLAY - 1)) + 1 ))
+	local INDEX=0
+
+	IFS=' ' read -ra NAME_ARRAY <<< ${2}
+	IFS=' ' read -ra ICON_ARRAY <<< ${3}
+
+	for SCREEN in "${NAME_ARRAY[@]}"
+	do
+		ICON=${ICON_ARRAY[$INDEX]}
+		sketchybar --add space $SCREEN left\
+			   --set $SCREEN\
+			   associated_display=$DISPLAY\
+			   associated_space=$COUNT\
+			   label.drawing=off\
+			   icon=$ICON\
+			   icon.color=$LIGHT_COLOR\
+			   background.color=$ACCENT_COLOR\
+			   script="$PLUGIN_DIR/spaces.sh"\
+			   click_script="yabai -m space --focus $COUNT"
+
+
+		COUNT=$(($COUNT + 1))
+		INDEX=$(($INDEX + 1))
+	done
+}
+
+setup_display_spaces 1 "${DISPLAY_1_SPACES[*]}" "${DISPLAY_1_ICONS[*]}"
+setup_display_spaces 2 "${DISPLAY_2_SPACES[*]}" "${DISPLAY_2_ICONS[*]}"
+
+
+sketchybar --update
