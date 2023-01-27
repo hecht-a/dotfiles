@@ -2,7 +2,7 @@
 	name = hecht-a
 	email = axel.hct@gmail.com
 [core]
-	editor = gedit
+	editor = nvim
 	autocrlf = input
 	fileMode = false
 	excludesFile = ~/.gitignore
