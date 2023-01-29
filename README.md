@@ -3,6 +3,7 @@ This repository contains my dotfiles for my different environments. Each environ
 
 ## Requirements
 ### Base
+- [brew](https://brew.sh/)
 - [oh-my-zsh](https://ohmyz.sh/)
 
 ### Runtimes
@@ -21,3 +22,4 @@ This repository contains my dotfiles for my different environments. Each environ
 
 ### Sources
 - https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b
+
