@@ -32,7 +32,16 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 ## ALIASES
 alias sc="source ~/.zshrc"
+
+## DOTFILES REPO
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias dfi='dotfiles'
+alias dfs='dotfiles status'
+alias dfl='dotfiles log'
+alias dfd='dotfiles diff'
+alias dfc='dotfiles commit'
+alias dfp='dotfiles push'
 
 ## ANGULAR COMPLETION
 source <(ng completion script)
