@@ -3,7 +3,7 @@
 	email = axel.hct@gmail.com
 	signingkey = 87C8993FAB0B46DF
 [core]
-	editor = code --wait
+	editor = nvim
 	autocrlf = input
 	excludesFile = ~/.gitignore
 [commit]
