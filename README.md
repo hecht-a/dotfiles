@@ -20,6 +20,9 @@ This repository contains my dotfiles for my different environments. Each environ
 ### Tools
 - [Kitty](https://sw.kovidgoyal.net/kitty/)
 
+### README
+- [Kitty](.config/kitty/README.md)
+
 ### Sources
 - https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b
 
