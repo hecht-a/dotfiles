@@ -14,16 +14,15 @@ sketchybar --add slider volume right                          \
                         slider.knob=􀀁                         \
            --subscribe volume volume_change mouse.clicked
 
-sketchybar --add alias "Control Center,Sound" right                      \
-           --rename "Control Center,Sound" volume_alias                  \
-           --set volume_alias icon.drawing=on                            \
-                              icon=􀊩                                    \
-                              label.drawing=off                          \
-                              alias.color=$WHITE                         \
-                              padding_right=0                            \
-                              padding_left=-5                            \
-                              width=35                                  \
-                              align=right                                \
+sketchybar --add alias "Centre de contrôle,Sound" right        \
+           --rename "Centre de contrôle,Sound" volume_alias    \
+           --set volume_alias icon.drawing=off                 \
+                              label.drawing=off                \
+                              alias.color=$WHITE               \
+                              padding_right=-5                 \
+                              padding_left=0                   \
+                              width=35                         \
+                              align=right                      \
                               click_script="$PLUGIN_DIR/volume_click.sh"
 
 sketchybar --add bracket status brew github.bell volume volume_alias \
