@@ -11,9 +11,9 @@ sketchybar --bar position=bottom\
 # What are items's default values
 sketchybar --default updates=when_shown\
                      drawing=on\
-                     icon.font="Hack Nerd Font:Bold:22.0"\
+                     icon.font="Caskaydia Nerd Font:Bold:22.0"\
                      icon.color=$LIGHT_COLOR\
-                     label.font="Hack Nerd Font:Bold:18.0"\
+                     label.font="Caskaydia Nerd Font:Bold:18.0"\
                      label.color=$LIGHT_COLOR\
                      label.padding_left=4\
                      label.padding_right=4\
