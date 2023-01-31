@@ -22,6 +22,13 @@ packer.startup(function(use)
     -- Packer installer
     use({ "wbthomason/packer.nvim", opt = true })
 
+    -- NCM2
+    use({ "ncm2/ncm2" })
+    use({ "roxma/nvim-yarp" })
+
+    -- ALE
+    use({ "dense-analysis/ale" })
+
     -- Color Scheme
     use({ "catppuccin/nvim", as = "catppuccin" })
     use("kyazdani42/nvim-web-devicons")
