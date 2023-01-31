@@ -23,6 +23,7 @@ This repository contains my dotfiles for my different environments. Each environ
 ### README
 - [Kitty](.config/kitty/README.md)
 - [neovim](.config/nvim/README.md)
+- [skhd](.config/skhd/README.md)
 
 ### Sources
 - https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b
