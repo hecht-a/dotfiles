@@ -41,6 +41,7 @@ local servers = {
     "tailwindcss",
     "taplo",
     "astro",
+    "phpactor"
 }
 
 local server_settings = {
