@@ -1,82 +1,72 @@
-source $HOME/.config/sketchybar/vars.sh
+#!/bin/sh
 
-# How the bar shows up
-sketchybar --bar position=bottom\
-                 sticky=true\
-                 height=$HEIGHT\
-		 color=0xF21e1e2e\
-		 display=all\
-		 sticky=on
+source "$HOME/.config/sketchybar/colors.sh" # Loads all defined colors
+source "$HOME/.config/sketchybar/icons.sh" # Loads all defined icons
+source "$HOME/.config/sketchybar/plugins/icon_map.sh" # Loads all defined icons
 
-# What are items's default values
-sketchybar --default updates=when_shown\
-                     drawing=on\
-                     icon.font="Caskaydia Nerd Font:Bold:22.0"\
-                     icon.color=$LIGHT_COLOR\
-                     label.font="Caskaydia Nerd Font:Bold:18.0"\
-                     label.color=$LIGHT_COLOR\
-                     label.padding_left=4\
-                     label.padding_right=4\
-                     icon.padding_left=4\
-                     icon.padding_right=4\
-		     background.corner_radius=$RADIUS\
-		     background.height=$BACKGROUND_ITEM_HEIGHT\
-		     background.padding_right=4\
-		     background.padding_left=4
+ITEM_DIR="$HOME/.config/sketchybar/items" # Directory where the items are configured
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins" # Directory where all the plugin scripts are stored
 
-sketchybar --add item clock right\
-	   --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh"
+FONT="CaskaydiaCove Nerd Font" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+PADDINGS=3 # All paddings use this value (icon, label, background)
 
-sketchybar --add item battery right\
-	   --set battery update_freq=10 script="$PLUGIN_DIR/battery.sh"
-
-sketchybar --add item space_name_1 left\
-		 drawing=on
-
-sketchybar --add item space_name_2 left\
-		 drawing=on
-# Spaces setup
-DISPLAY_1_SPACES=('Code' 'Web' 'Utils' 'Misc')
-DISPLAY_1_ICONS=('' '' '' '')
-DISPLAY_2_SPACES=('Stream' 'Communications' 'Music' 'Tools')
-DISPLAY_2_ICONS=('' 'ﮠ' '' '')
-
-COUNT=1
-
-function setup_display_spaces() {
-	# First arg is a display index
-	# Second arg is an array of space
-	# Third arg is an array of icons
-
-	local DISPLAY=$1
-	local COUNT=$(( 4 * $((DISPLAY - 1)) + 1 ))
-	local INDEX=0
-
-	IFS=' ' read -ra NAME_ARRAY <<< ${2}
-	IFS=' ' read -ra ICON_ARRAY <<< ${3}
-
-	for SCREEN in "${NAME_ARRAY[@]}"
-	do
-		ICON=${ICON_ARRAY[$INDEX]}
-		sketchybar --add space $SCREEN left\
-			   --set $SCREEN\
-			   associated_display=$DISPLAY\
-			   associated_space=$COUNT\
-			   label.drawing=off\
-			   icon=$ICON\
-			   icon.color=$LIGHT_COLOR\
-			   background.color=$ACCENT_COLOR\
-			   script="$PLUGIN_DIR/spaces.sh"\
-			   click_script="yabai -m space --focus $COUNT"
+# Setting up and starting the helper process
+HELPER=git.felix.helper
+killall helper
+cd $HOME/.config/sketchybar/helper && make
+$HOME/.config/sketchybar/helper/helper $HELPER > /dev/null 2>&1 &
 
 
-		COUNT=$(($COUNT + 1))
-		INDEX=$(($INDEX + 1))
-	done
-}
+# Setting up the general bar appearance and default values
+sketchybar --bar     height=39                                         \
+                     color=$BAR_COLOR                                  \
+                     shadow=on                                         \
+                     position=top                                      \
+                     sticky=on                                         \
+                     padding_right=10                                  \
+                     padding_left=10                                   \
+                     corner_radius=9                                   \
+                     y_offset=10                                       \
+                     margin=10                                         \
+                     blur_radius=20                                    \
+                     notch_width=0                                     \
+                                                                       \
+           --default updates=when_shown                                \
+                     icon.font="$FONT:Bold:14.0"                       \
+                     icon.color=$ICON_COLOR                            \
+                     icon.padding_left=$PADDINGS                       \
+                     icon.padding_right=$PADDINGS                      \
+                     label.font="$FONT:Semibold:13.0"                  \
+                     label.color=$LABEL_COLOR                          \
+                     label.padding_left=$PADDINGS                      \
+                     label.padding_right=$PADDINGS                     \
+                     padding_right=$PADDINGS                           \
+                     padding_left=$PADDINGS                            \
+                     background.height=30                              \
+                     background.corner_radius=9                        \
+                     popup.background.border_width=2                   \
+                     popup.background.corner_radius=9                  \
+                     popup.background.border_color=$POPUP_BORDER_COLOR \
+                     popup.background.color=$POPUP_BACKGROUND_COLOR    \
+                     popup.background.shadow.drawing=on
 
-setup_display_spaces 1 "${DISPLAY_1_SPACES[*]}" "${DISPLAY_1_ICONS[*]}"
-setup_display_spaces 2 "${DISPLAY_2_SPACES[*]}" "${DISPLAY_2_ICONS[*]}"
+# Left
+source "$ITEM_DIR/apple.sh"
+source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
 
+# Center
+source "$ITEM_DIR/spotify.sh"
 
+# Right
+source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/brew.sh"
+source "$ITEM_DIR/github.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/cpu.sh"
+
+# Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
+
+echo "sketchybar configuation loaded.."
