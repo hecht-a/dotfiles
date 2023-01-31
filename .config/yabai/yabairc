@@ -1,16 +1,15 @@
 # Monterey / BigSur config
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
 # Activate the automatic snapping
 yabai -m config layout bsp
 
-# yabai -m config window_opacity no
-# yabai -m config active_window_opacity 1.0
-# yabai -m config normal_window_opacity 0.9
-
 # Spacing around windows
-yabai -m config top_padding 10
+yabai -m config top_padding 59
 yabai -m config bottom_padding 10
 yabai -m config left_padding 10
 yabai -m config right_padding 10
