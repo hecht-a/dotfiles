@@ -33,6 +33,7 @@ alias maj="sudo sh ~/maj.sh"
 ## DOTFILES REPO
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+alias dfi='dotfiles'
 alias dfs='dotfiles status'
 alias dfl='dotfiles log'
 alias dfd='dotfiles diff'
