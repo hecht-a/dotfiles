@@ -29,6 +29,7 @@ alias dotfiles="cd ${documents}/dotfiles"
 alias browser="cd ~/meta-browser && pnpm run start"
 alias sc="source ~/.zshrc"
 alias maj="sudo sh ~/maj.sh"
+alias setphp="sudo update-alternatives --config php; sudo update-alternatives --config phar; update-alternatives --config phar.phar; systemctl restart apache2"
 
 ## DOTFILES REPO
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
