@@ -79,3 +79,8 @@ eval "$(starship init zsh)"
 
 ## FIG
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# pnpm
+export PNPM_HOME="/Users/axel/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
