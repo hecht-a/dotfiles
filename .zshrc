@@ -89,3 +89,5 @@ bindkey "^[[1;3C" forward-word # Alt+Right: Move after word at right
 bindkey "^[[1;3D" backward-word # Alt+Left: Move after word at left
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
