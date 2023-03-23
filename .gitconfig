@@ -1,8 +1,11 @@
 [user]
 	name = hecht-a
 	email = axel.hct@gmail.com
+	signingkey = 09F73075501C6027
 [core]
 	editor = nvim
 	autocrlf = input
 	fileMode = false
 	excludesFile = ~/.gitignore
+[commit]
+	gpgsign = true
