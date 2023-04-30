@@ -43,9 +43,6 @@ alias dfd='dotfiles diff'
 alias dfc='dotfiles commit'
 alias dfp='dotfiles push'
 
-## ANGULAR COMPLETION
-source <(ng completion script)
-
 ## ANDROID STUDIO
 export CAPACITOR_ANDROID_STUDIO_PATH="/Users/axel/Applications/JetBrains Toolbox/Android Studio.app"
 
