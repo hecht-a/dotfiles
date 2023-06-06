@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
 source ~/.ssh.zsh
@@ -30,6 +32,12 @@ alias browser="cd ~/meta-browser && pnpm run start"
 alias sc="source ~/.zshrc"
 alias maj="sudo sh ~/maj.sh"
 alias setphp="sudo update-alternatives --config php; sudo update-alternatives --config phar; update-alternatives --config phar.phar; systemctl restart apache2"
+
+## VPN CERFRANCE
+alias vpn_up="sudo ipsec up cerfrance"
+alias vpn_down="sudo ipsec down cerfrance"
+alias vpn_restart="sudo ipsec restart"
+alias vpn_status="sudo ipsec status"
 
 ## DOTFILES REPO
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -91,3 +99,6 @@ bindkey "^[[1;3D" backward-word # Alt+Left: Move after word at left
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
