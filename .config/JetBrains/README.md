@@ -87,6 +87,7 @@
 | Ctrl+Alt+Z           | Rollback                           |
 | Ctrl+Shift+K         | Push                               |
 | Ctrl+Shift+A         | Find Action                        |
+| Ctrl+Q	       | Quick Documentation		    |
 
 ## Tool Windows
 
