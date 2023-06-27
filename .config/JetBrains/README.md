@@ -8,6 +8,7 @@
 | Ctrl+Down         | Shrink Selection              |
 | Alt+Shift+Click   | Add or Remove Caret           |
 | Ctrl+Shift+Delete | Remove Line                   |
+| Ctrl+Delete	    | Delete to Word End	    |
 | Ctrl+D            | Duplicate Line or Selection   |
 | Ctrl+Enter        | Split Line                    |
 | Shift+Enter       | Start New Line                |
