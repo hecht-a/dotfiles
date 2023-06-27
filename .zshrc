@@ -32,6 +32,7 @@ alias browser="cd ~/meta-browser && pnpm run start"
 alias sc="source ~/.zshrc"
 alias maj="sudo sh ~/maj.sh"
 alias setphp="sudo update-alternatives --config php; sudo update-alternatives --config phar; update-alternatives --config phar.phar; systemctl restart apache2"
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 ## VPN CERFRANCE
 alias vpn_up="sudo ipsec up cerfrance"
