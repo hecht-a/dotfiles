@@ -88,6 +88,10 @@
 | Ctrl+Shift+K         | Push                               |
 | Ctrl+Shift+A         | Find Action                        |
 | Ctrl+Q	       | Quick Documentation		    |
+| Ctrl+Shift+T	       | Reopen Closed Tab		    |
+| Ctrl+W	       | Close Tab			    |
+| Ctrl+Shift+W	       | Close All Tabs			    |
+| Ctrl+Alt+W	       | Close Other Tabs	            |
 
 ## Tool Windows
 
