@@ -43,4 +43,13 @@
 | `<leader>nc` | `:Telescope neoclip<CR>` | Open clipboard |
 
 ## Misc
-...
+| Key | Action |
+| `dd` | Delete line |
+| `O` | Insert line before |
+| `yyp` | Duplicate line after |
+| `yyP` | Duplicate line before |
+| `i` | Insert before the cursor |
+| `I` | Insert before the line |
+| `a` | Insert after the cursor |
+| `A` | Insert after the line |
+
