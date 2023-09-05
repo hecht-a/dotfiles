@@ -32,6 +32,8 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 ## ALIASES
 alias sc="source ~/.zshrc"
+alias kitty="/Applications/kitty.app/Contents/MacOS/kitty"
+alias sshk="kitty +kitten ssh"
 
 ## DOTFILES REPO
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -81,3 +83,11 @@ eval "$(starship init zsh)"
 export PNPM_HOME="/Users/axel/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+
+# Herd injected PHP binary.
+export PATH="/Users/axel/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/axel/Library/Application Support/Herd/config/php/82/"
